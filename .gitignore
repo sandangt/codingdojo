@@ -1,0 +1,14 @@
+.direnv/
+.mvn/
+target/
+__pycache__/
+pkg/
+bin/
+target/
+!.mvn/wrapper/maven-wrapper.jar
+
+# Editor
+.idea/
+.vscode/
+*~
+*.swp
