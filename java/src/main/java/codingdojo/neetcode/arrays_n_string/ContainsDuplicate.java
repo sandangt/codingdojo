@@ -1,5 +1,6 @@
 package codingdojo.neetcode.arrays_n_string;
 
+import java.util.Arrays;
 import java.util.HashSet;
 import java.util.Set;
 
@@ -10,12 +11,9 @@ import java.util.Set;
  */
 public class ContainsDuplicate {
     static boolean solution(int[] nums) {
-        Set<Integer> cache = new HashSet<>();
-        for (int i : nums) {
-            if (cache.contains(i)) {
-                return true;
-            }
-            cache.add(i);
+        Arrays.sort(nums);
+        for (int i = 1; i < nums.length; i++) {
+            if (nums[i] == nums[i-1]) return true;
         }
         return false;
     }
