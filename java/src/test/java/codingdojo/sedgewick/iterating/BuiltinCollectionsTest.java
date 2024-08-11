@@ -10,16 +10,16 @@ import java.util.Stack;
 import org.junit.jupiter.api.Test;
 
 
-public class BuiltinCollectionsTest {
+class BuiltinCollectionsTest {
     @Test
-    public void playWithArrayList() {
+    void playWithArrayList() {
         List<String> lst = new ArrayList<>();
         lst.addAll(List.of(new String[] {"a", "b", "c", "d"}));
         lst.forEach(System.out::println);
     }
 
     @Test
-    public void playWithStack() {
+    void playWithStack() {
         Stack<String> st = new Stack<>();
         st.push("a");
         st.push("b");
@@ -27,7 +27,8 @@ public class BuiltinCollectionsTest {
         st.forEach(System.out::println);
     }
 
-    @Test public void playWithQueue() {
+    @Test
+    void playWithQueue() {
         // region Array dequeue implementation of Queue
         Queue<String> queue1 = new ArrayDeque<>();
         queue1.addAll(List.of(new String[] {"a", "b", "c"}));

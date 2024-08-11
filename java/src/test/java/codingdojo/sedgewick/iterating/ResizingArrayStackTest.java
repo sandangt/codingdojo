@@ -7,12 +7,13 @@ import org.junit.jupiter.api.Disabled;
 import org.junit.jupiter.api.Test;
 
 
-public class ResizingArrayStackTest {
+class ResizingArrayStackTest {
+
     private static final String[] TEST_ARR = {"a","b","c","d","e"};
     private ResizingArrayStack<String> stack;
 
     @BeforeEach
-    public void init() {
+    void setUp() {
         stack = new ResizingArrayStack<>();
         for (String i : TEST_ARR) {
             stack.push(i);
@@ -20,16 +21,16 @@ public class ResizingArrayStackTest {
     }
 
     @Test
-    public void test0() {
+    void test0() {
         for (int i = TEST_ARR.length - 1; i >= 0; i--) {
-            assertThat(stack.pop().orElse(null)).isEqualTo(TEST_ARR[i]);
+            assertThat(stack.pop()).isEqualTo(TEST_ARR[i]);
         }
         assertThat(stack.isEmpty()).isTrue();
     }
 
     @Test
     @Disabled
-    public void show() {
+    void show() {
         for (String i : stack) {
             System.out.println(i);
         }

@@ -1,8 +1,5 @@
 package codingdojo.sedgewick.iterating;
 
-import java.util.Optional;
-
-
 public final class LinkedStack<Item> extends LinkedList<Item> implements IStack<Item> {
     public LinkedStack() {
         super();
@@ -20,20 +17,26 @@ public final class LinkedStack<Item> extends LinkedList<Item> implements IStack<
 
     @Override
     public void push(Item item) {
-        Node newNode = new Node();
-        newNode.item = item;
-        newNode.next = head;
-        head = newNode;
-        n++;
+        try {
+            Node newNode = new Node();
+            newNode.item = item;
+            newNode.next = head;
+            head = newNode;
+        } finally {
+            n++;
+        }
     }
 
     @Override
-    public Optional<Item> pop() {
-        if (isEmpty()) return Optional.empty();
-        Node returnNode = head;
-        head = head.next;
-        n--;
-        return Optional.ofNullable(returnNode.item);
+    public Item pop() {
+        try {
+            if (isEmpty()) return null;
+            Node returnNode = head;
+            head = head.next;
+            return returnNode.item;
+        } finally {
+            n--;
+        }
     }
 
     @Override

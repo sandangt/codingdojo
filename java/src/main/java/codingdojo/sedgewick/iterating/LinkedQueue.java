@@ -1,8 +1,5 @@
 package codingdojo.sedgewick.iterating;
 
-import java.util.Optional;
-
-
 public final class LinkedQueue<Item> extends LinkedList<Item> implements IQueue<Item> {
     /**
      * [head] -> [node0] -> [node1] -> [tail]
@@ -44,12 +41,12 @@ public final class LinkedQueue<Item> extends LinkedList<Item> implements IQueue<
     }
 
     @Override
-    public Optional<Item> dequeue() {
+    public Item dequeue() {
         try {
-            if (isEmpty()) return Optional.empty();
+            if (isEmpty()) return null;
             Node returnNode = head;
             head = head.next;
-            return Optional.ofNullable(returnNode.item);
+            return returnNode.item;
         } finally {
             n--;
         }
