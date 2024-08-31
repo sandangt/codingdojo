@@ -1,4 +1,4 @@
-package codingdojo.neetcode.arraystring;
+package codingdojo.neetcode.arrayhashing;
 
 
 /**

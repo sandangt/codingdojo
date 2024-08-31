@@ -1,4 +1,4 @@
-package codingdojo.neetcode.arraystring;
+package codingdojo.neetcode.arrayhashing;
 
 import java.util.HashMap;
 import java.util.Map;
@@ -9,7 +9,12 @@ import java.util.Map;
  * url: https://leetcode.com/problems/valid-anagram/
  */
 public class ValidAnagram {
+
     static boolean solution(String s, String t) {
+        return solution2(s, t);
+    }
+
+    static boolean solution1(String s, String t) {
         Map<Character, Integer> sCounter = new HashMap<>();
         Map<Character, Integer> tCounter = new HashMap<>();
 
@@ -31,4 +36,19 @@ public class ValidAnagram {
         }
         return true;
     }
+
+    static boolean solution2(String s, String t) {
+        if (s.length() != t.length()) {
+            return false;
+        }
+        int[] store = new int[26];
+        for (int i=0; i<s.length(); i++) {
+            store[s.charAt(i) - 'a']++;
+            store[t.charAt(i) - 'a']--;
+        }
+        for (int i: store) if (i != 0) return false;
+        return true;
+
+    }
+
 }

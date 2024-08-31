@@ -1,4 +1,4 @@
-package codingdojo.neetcode.arraystring;
+package codingdojo.neetcode.arrayhashing;
 
 
 /**
@@ -7,11 +7,10 @@ package codingdojo.neetcode.arraystring;
  */
 public class ConcatenationOfArray {
     static int[] solution(int[] nums) {
-        int inputLen = nums.length;
-        int[] result = new int[2 * inputLen];
-        for (int i = 0; i<inputLen; i++) {
+        int[] result = new int[2 * nums.length];
+        for (int i = 0; i<nums.length; i++) {
             result[i] = nums[i];
-            result[i + inputLen] = nums[i];
+            result[i + nums.length] = nums[i];
         }
         return result;
     }

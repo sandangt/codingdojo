@@ -1,6 +1,6 @@
-package codingdojo.neetcode.arraystring;
+package codingdojo.neetcode.arrayhashing;
 
-import static codingdojo.neetcode.arraystring.TwoSum.solution;
+import static codingdojo.neetcode.arrayhashing.TwoSum.solution;
 import static org.assertj.core.api.Assertions.assertThat;
 
 import org.junit.jupiter.api.Test;

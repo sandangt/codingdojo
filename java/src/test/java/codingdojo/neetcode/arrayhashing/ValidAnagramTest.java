@@ -1,7 +1,7 @@
-package codingdojo.neetcode.arraystring;
+package codingdojo.neetcode.arrayhashing;
 
 import static org.assertj.core.api.Assertions.assertThat;
-import static codingdojo.neetcode.arraystring.ValidAnagram.solution;
+import static codingdojo.neetcode.arrayhashing.ValidAnagram.solution;
 
 import org.junit.jupiter.api.Test;
 

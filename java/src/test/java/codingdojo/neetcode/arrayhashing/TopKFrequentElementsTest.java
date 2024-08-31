@@ -1,6 +1,6 @@
-package codingdojo.neetcode.arraystring;
+package codingdojo.neetcode.arrayhashing;
 
-import static codingdojo.neetcode.arraystring.TopKFrequentElements.solution;
+import static codingdojo.neetcode.arrayhashing.TopKFrequentElements.solution;
 import static org.assertj.core.api.Assertions.assertThat;
 
 import org.junit.jupiter.api.Test;

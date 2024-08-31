@@ -1,7 +1,7 @@
-package codingdojo.neetcode.arraystring;
+package codingdojo.neetcode.arrayhashing;
 
 
-import static codingdojo.neetcode.arraystring.LastWordLength.solution;
+import static codingdojo.neetcode.arrayhashing.LastWordLength.solution;
 import static org.assertj.core.api.Assertions.assertThat;
 
 import org.junit.jupiter.api.Test;
