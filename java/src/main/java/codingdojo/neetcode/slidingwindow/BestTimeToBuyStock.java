@@ -1,6 +1,5 @@
 package codingdojo.neetcode.slidingwindow;
 
-
 /**
  * easy
  * url: https://leetcode.com/problems/best-time-to-buy-and-sell-stock/

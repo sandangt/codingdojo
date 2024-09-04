@@ -24,4 +24,10 @@ class ContainsDuplicateTest {
         int[] nums = {1,1,1,3,3,4,3,2,4,2};
         assertThat(ContainsDuplicate.solution(nums)).isTrue();
     }
+
+    @Test
+    void testSolution3() {
+        int[] nums = {1,2,3,3};
+        assertThat(ContainsDuplicate.solution(nums)).isTrue();
+    }
 }

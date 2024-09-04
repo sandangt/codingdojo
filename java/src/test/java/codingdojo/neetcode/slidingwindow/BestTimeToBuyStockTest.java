@@ -13,16 +13,32 @@ public class BestTimeToBuyStockTest {
         int output = 5;
         assertThat(solution(input)).isEqualTo(output);
     }
+
     @Test
     public void testSolution1() {
         int[] input = {7,6,4,3,1};
         int output = 0;
         assertThat(solution(input)).isEqualTo(output);
     }
+
     @Test
     public void testSolution2() {
         int[] input = {1,2,4,2,5,7,2,4,9,0,9};
         int output = 9;
+        assertThat(solution(input)).isEqualTo(output);
+    }
+
+    @Test
+    public void testSolution3() {
+        int[] input = {10,1,5,6,7,1};
+        int output = 6;
+        assertThat(solution(input)).isEqualTo(output);
+    }
+
+    @Test
+    public void testSolution4() {
+        int[] input = {10,8,7,5,2};
+        int output = 0;
         assertThat(solution(input)).isEqualTo(output);
     }
 }

@@ -19,4 +19,16 @@ public class LastStoneWeightTest {
         int output = 1;
         assertThat(solution(input)).isEqualTo(output);
     }
+    @Test
+    public void testSolution2() {
+        int[] input = {2,3,6,2,4};
+        int output = 1;
+        assertThat(solution(input)).isEqualTo(output);
+    }
+    @Test
+    public void testSolution3() {
+        int[] input = {1,2};
+        int output = 1;
+        assertThat(solution(input)).isEqualTo(output);
+    }
 }

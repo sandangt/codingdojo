@@ -37,4 +37,20 @@ public class BinarySearchTest {
         int output = -1;
         assertThat(solution(input1, input2)).isEqualTo(output);
     }
+
+    @Test
+    public void testSolution4() {
+        int[] input1 = {-1,0,2,4,6,8};
+        int input2 = 4;
+        int output = 3;
+        assertThat(solution(input1, input2)).isEqualTo(output);
+    }
+
+    @Test
+    public void testSolution5() {
+        int[] input1 = {-1,0,2,4,6,8};
+        int input2 = 3;
+        int output = -1;
+        assertThat(solution(input1, input2)).isEqualTo(output);
+    }
 }

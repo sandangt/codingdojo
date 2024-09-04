@@ -25,4 +25,16 @@ public class ValidParenthesesTest {
         String input = "(]";
         assertThat(solution(input)).isFalse();
     }
+
+    @Test
+    public void testSolution3() {
+        String input = "[(])";
+        assertThat(solution(input)).isFalse();
+    }
+
+    @Test
+    public void testSolution4() {
+        String input = "([{}])";
+        assertThat(solution(input)).isTrue();
+    }
 }

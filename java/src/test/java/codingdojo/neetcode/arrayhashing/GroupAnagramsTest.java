@@ -50,4 +50,15 @@ class GroupAnagramsTest {
         validate(GroupAnagrams.solution(strs), expected);
     }
 
+    @Test
+    void testSolution4() {
+        String[] strs = new String[] {"act","pots","tops","cat","stop","hat"};
+        var expected = List.of(
+            List.of("hat"),
+            List.of("act", "cat"),
+            List.of("stop", "pots", "tops")
+        );
+        validate(GroupAnagrams.solution(strs), expected);
+    }
+
 }

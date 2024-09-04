@@ -9,25 +9,33 @@ import java.util.Stack;
  */
 public class ValidParentheses {
     static boolean solution(String s) {
-        Stack<Character> stack = new Stack<>();
-        char popout;
-        for (int i = 0; i < s.length(); i++) {
-            char currentChar = s.charAt(i);
-            if (currentChar == '(' || currentChar == '{' || currentChar == '[') {
-                stack.push(currentChar);
-            } else if (currentChar == ')' || currentChar == '}' || currentChar == ']') {
-                popout = stack.pop();
-                if (popout == '(' && currentChar != ')') {
-                    return false;
-                }
-                if (popout == '{' && currentChar != '}') {
-                    return false;
-                }
-                if (popout == '[' && currentChar != ']') {
+        Stack<Character> st = new Stack<>();
+        char currentChar, popOut;
+        for (int i=0; i<s.length(); i++) {
+            currentChar = s.charAt(i);
+            if (isOpen(currentChar)) {
+                st.push(currentChar);
+            } else if (isClose(currentChar)) {
+                if (st.isEmpty()) return false;
+                popOut = st.pop();
+                if (!isSameType(popOut, currentChar)) {
                     return false;
                 }
             }
         }
-        return true;
+        return st.isEmpty();
     }
+
+    private static boolean isSameType(char open, char close) {
+        return (open == '(' && close == ')') || (open == '[' && close == ']') || (open == '{' && close == '}');
+    }
+
+    private static boolean isOpen(char c) {
+        return c == '(' || c == '[' || c == '{';
+    }
+
+    private static boolean isClose(char c) {
+        return c == ')' || c == ']' || c == '}';
+    }
+
 }

@@ -3,6 +3,10 @@ package codingdojo.neetcode.arrayhashing;
 import java.util.HashSet;
 import java.util.Set;
 
+/**
+ * medium
+ * url: https://leetcode.com/problems/valid-sudoku/
+ */
 public class ValidSudoku {
 
     private static final char SPECIAL_CHAR = '.';

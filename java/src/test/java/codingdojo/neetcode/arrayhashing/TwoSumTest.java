@@ -30,4 +30,28 @@ public class TwoSumTest {
         int[] output = {0,1};
         assertThat(solution(nums, target)).containsExactly(output);
     }
+
+    @Test
+    public void testSolution3() {
+        int[] nums = {3,4,5,6};
+        int target = 7;
+        int[] output = {0,1};
+        assertThat(solution(nums, target)).containsExactly(output);
+    }
+
+    @Test
+    public void testSolution4() {
+        int[] nums = {4,5,6};
+        int target = 10;
+        int[] output = {0,2};
+        assertThat(solution(nums, target)).containsExactly(output);
+    }
+
+    @Test
+    public void testSolution5() {
+        int[] nums = {5,5};
+        int target = 10;
+        int[] output = {0,1};
+        assertThat(solution(nums, target)).containsExactly(output);
+    }
 }

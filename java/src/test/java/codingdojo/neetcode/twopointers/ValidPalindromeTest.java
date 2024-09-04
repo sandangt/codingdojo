@@ -24,4 +24,16 @@ public class ValidPalindromeTest {
         String input = "race a car";
         assertThat(solution(input)).isFalse();
     }
+
+    @Test
+    public void testSolution3() {
+        String input = "Was it a car or a cat I saw?";
+        assertThat(solution(input)).isTrue();
+    }
+
+    @Test
+    public void testSolution4() {
+        String input = "tab a cat";
+        assertThat(solution(input)).isFalse();
+    }
 }

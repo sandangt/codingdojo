@@ -22,4 +22,12 @@ public class TopKFrequentElementsTest {
         int[] output = {1};
         assertThat(solution(input1, input2)).containsExactly(output);
     }
+
+    @Test
+    public void testSolution2() {
+        int[] input1 = {7,7};
+        int input2 = 1;
+        int[] output = {7};
+        assertThat(solution(input1, input2)).containsExactly(output);
+    }
 }
