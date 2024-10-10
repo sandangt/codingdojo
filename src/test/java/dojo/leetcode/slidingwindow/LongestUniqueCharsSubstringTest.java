@@ -1,42 +1,15 @@
 package dojo.leetcode.slidingwindow;
 
 import org.junit.jupiter.api.Test;
+import org.junit.jupiter.params.ParameterizedTest;
+import org.junit.jupiter.params.provider.CsvSource;
 
 import static org.assertj.core.api.Assertions.assertThat;
 
 class LongestUniqueCharsSubstringTest {
-    @Test
-    void testSolution0() {
-        String s = "abcabcbb";
-        int expected = 3;
-        assertThat(LongestUniqueCharsSubstring.solution(s)).isEqualTo(expected);
-    }
-
-    @Test
-    void testSolution1() {
-        String s = "bbbbb";
-        int expected = 1;
-        assertThat(LongestUniqueCharsSubstring.solution(s)).isEqualTo(expected);
-    }
-
-    @Test
-    void testSolution2() {
-        String s = "pwwkew";
-        int expected = 3;
-        assertThat(LongestUniqueCharsSubstring.solution(s)).isEqualTo(expected);
-    }
-
-    @Test
-    void testSolution4() {
-        String s = "zxyzxyz";
-        int expected = 3;
-        assertThat(LongestUniqueCharsSubstring.solution(s)).isEqualTo(expected);
-    }
-
-    @Test
-    void testSolution5() {
-        String s = " ";
-        int expected = 1;
+    @ParameterizedTest
+    @CsvSource({"abcabcbb,3", "bbbbb,1", "pwwkew,3", "zxyzxyz,3", "' ',1", "dvdf,3"})
+    void testSolution(String s, int expected) {
         assertThat(LongestUniqueCharsSubstring.solution(s)).isEqualTo(expected);
     }
 

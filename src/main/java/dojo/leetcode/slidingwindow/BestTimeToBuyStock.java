@@ -7,7 +7,7 @@ package dojo.leetcode.slidingwindow;
 public class BestTimeToBuyStock {
     static int solution(int[] prices) {
         int left = 0, right = 1, maxProfit = 0;
-        while (right <= prices.length - 1) {
+        while (right < prices.length) {
             if (prices[left] >= prices[right]) {
                 left = right;
                 ++right;

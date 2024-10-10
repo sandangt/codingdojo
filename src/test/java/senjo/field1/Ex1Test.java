@@ -1,10 +1,10 @@
-package battleground.part1;
+package senjo.field1;
 
 import org.junit.jupiter.api.Test;
 
 import static org.assertj.core.api.Assertions.assertThat;
 
-class Test1Test {
+class Ex1Test {
     @Test
     void testSolution0() {
         char[][] board = {
@@ -17,7 +17,7 @@ class Test1Test {
             {'.', '6', '.', '.', '.', '.', '2', '8', '.'},
             {'.', '.', '.', '4', '1', '9', '.', '.', '5'},
             {'.', '.', '.', '.', '8', '.', '.', '7', '9'}};
-        var result = Test1.solution(board);
+        var result = Ex1.solution(board);
         assertThat(result).isTrue();
     }
 
@@ -33,7 +33,7 @@ class Test1Test {
             {'7', '.', '6', '.', '.', '.', '.', '.', '.'},
             {'9', '.', '.', '.', '.', '4', '.', '.', '.'},
             {'.', '.', '.', '.', '.', '.', '.', '.', '.'}};
-        var result = Test1.solution(board);
+        var result = Ex1.solution(board);
         assertThat(result).isFalse();
     }
 }

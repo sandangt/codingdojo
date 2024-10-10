@@ -10,28 +10,29 @@ import java.util.Set;
 public class ValidSudoku {
 
     private static final char SPECIAL_CHAR = '.';
+    private static final char STARTER_CHAR = '0';
 
     static boolean solution(char[][] board) {
-        Set<Character> rowSet;
-        Set<Character> columnSet;
+        boolean[] rowSet;
+        boolean[] colSet;
 
         for (int i=0; i<9; i++) {
-            rowSet = new HashSet<>();
-            columnSet = new HashSet<>();
+            rowSet = new boolean[10];
+            colSet = new boolean[10];
             for (int j = 0; j < 9; j++) {
                 char rc = board[i][j];
                 char cc = board[j][i];
                 if (rc != SPECIAL_CHAR) {
-                    if (rowSet.contains(rc)) {
+                    if (rowSet[rc - STARTER_CHAR]) {
                         return false;
                     }
-                    rowSet.add(rc);
+                    rowSet[rc - STARTER_CHAR] = true;
                 }
                 if (cc != SPECIAL_CHAR) {
-                    if (columnSet.contains(cc)) {
+                    if (colSet[cc - STARTER_CHAR]) {
                         return false;
                     }
-                    columnSet.add(cc);
+                    colSet[cc - STARTER_CHAR] = true;
                 }
             }
         }
@@ -47,17 +48,17 @@ public class ValidSudoku {
     }
 
     static boolean checkBlock(int rowIdx, int colIdx, char[][] board) {
-        Set<Character> blockSet = new HashSet<>();
+        boolean[] blockSet = new boolean[10];
         for (int i=rowIdx; i<rowIdx+3; i++) {
             for (int j=colIdx; j<colIdx+3; j++) {
                 char bc = board[i][j];
                 if (bc == SPECIAL_CHAR) {
                     continue;
                 }
-                if (blockSet.contains(bc)) {
+                if (blockSet[bc - STARTER_CHAR]) {
                     return false;
                 }
-                blockSet.add(bc);
+                blockSet[bc - STARTER_CHAR] = true;
             }
         }
         return true;

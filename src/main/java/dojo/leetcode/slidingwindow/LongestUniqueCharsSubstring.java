@@ -1,13 +1,16 @@
 package dojo.leetcode.slidingwindow;
 
 import java.util.ArrayDeque;
+import java.util.HashSet;
 import java.util.Queue;
+import java.util.Set;
 
 /**
  * medium
  * url: https://leetcode.com/problems/longest-substring-without-repeating-characters/
  */
 public class LongestUniqueCharsSubstring {
+
     static int solution(String s) {
         if (s.isEmpty()) return 0;
         if (s.length() == 1) return 1;
@@ -28,4 +31,5 @@ public class LongestUniqueCharsSubstring {
         }
         return maxLen;
     }
+
 }

@@ -1,6 +1,6 @@
-package battleground.part2;
+package senjo.field2;
 
-public class Test1 {
+public class Ex1 {
 
     private static final char POTHOLE_CHAR = 'X';
     private static final int PATCH_LENGTH = 3;

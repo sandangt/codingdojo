@@ -1,6 +1,5 @@
 package dojo.leetcode.twopointers;
 
-
 /**
  * easy
  * url: https://leetcode.com/problems/valid-palindrome/

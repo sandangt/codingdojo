@@ -30,7 +30,7 @@ class ProductArrayExceptSelfTest {
     @Test
     void testSolution3() {
         int[] nums = {1,2,3,6};
-        int[] answer = {48,24,12,8};
+        int[] answer = {36,18,12,6};
         assertThat(ProductArrayExceptSelf.solution(nums)).isEqualTo(answer);
     }
 }

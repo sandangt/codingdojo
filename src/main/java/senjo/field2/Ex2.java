@@ -1,6 +1,6 @@
-package battleground.part2;
+package senjo.field2;
 
-public class Test2 {
+public class Ex2 {
     public static int solution(int[] d, int x) {
         int result = 0; // days
         int currentMaxDiff, currentMinDiff;

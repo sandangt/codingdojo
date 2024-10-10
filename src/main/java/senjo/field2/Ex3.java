@@ -1,6 +1,6 @@
-package battleground.part2;
+package senjo.field2;
 
-public class Test3 {
+public class Ex3 {
     private static final char START_LOWER_CHAR = 'a';
     public static int solution(String s) {
         int result = 1;

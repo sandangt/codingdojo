@@ -22,7 +22,6 @@ public class GroupAnagrams {
             }
         }
         return map.values().stream().toList();
-
     }
 
     static String anagramEncode(String str) {

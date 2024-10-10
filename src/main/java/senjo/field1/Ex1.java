@@ -1,9 +1,9 @@
-package battleground.part1;
+package senjo.field1;
 
 import java.util.HashSet;
 import java.util.Set;
 
-public class Test1 {
+public class Ex1 {
 
     private static final char SPECIAL_CHARACTER = '.';
     private static final int BOARD_SIZE = 9;
