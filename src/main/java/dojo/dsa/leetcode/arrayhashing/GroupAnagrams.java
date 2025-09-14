@@ -11,20 +11,30 @@ import java.util.Map;
  * url: https://leetcode.com/problems/group-anagrams/
  */
 public class GroupAnagrams {
-    static List<List<String>> solution(String[] strs) {
+
+    public static String[][] solution(String[] strs) {
         Map<String, List<String>> map = new HashMap<>();
         for (String str : strs) {
-            String encodedStr = anagramEncode(str);
+            String encodedStr = encode(str);
             List<String> lst = map.getOrDefault(encodedStr, new ArrayList<>());
             lst.add(str);
             if (!map.containsKey(str)) {
                 map.put(encodedStr, lst);
             }
         }
-        return map.values().stream().toList();
+        String[][] result = new String[map.size()][];
+        String[] arr;
+        int idx = 0;
+        for (var it = map.values().iterator(); it.hasNext(); idx++) {
+            var currentItem = it.next();
+            arr = new String[currentItem.size()];
+            currentItem.toArray(arr);
+            result[idx] = arr;
+        }
+        return result;
     }
 
-    static String anagramEncode(String str) {
+    private static String encode(String str) {
         int[] store = new int[26];
         for (int i=0; i<str.length(); i++) {
             store[str.charAt(i) - 'a']++;

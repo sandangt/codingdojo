@@ -1,14 +1,15 @@
 package dojo.dsa.leetcode.arrayhashing;
 
-import org.junit.jupiter.api.Test;
+import org.junit.jupiter.params.ParameterizedTest;
+import org.junit.jupiter.params.provider.Arguments;
+import org.junit.jupiter.params.provider.FieldSource;
 
 import static org.assertj.core.api.Assertions.assertThat;
 
 class ValidSudokuTest {
 
-    @Test
-    void testSolution0() {
-        char[][] board =
+    private static final Arguments[] testSolution = {
+        Arguments.of(new char[][]
             {{'5','3','.','.','7','.','.','.','.'},
             {'6','.','.','1','9','5','.','.','.'},
             {'.','9','8','.','.','.','.','6','.'},
@@ -17,13 +18,9 @@ class ValidSudokuTest {
             {'7','.','.','.','2','.','.','.','6'},
             {'.','6','.','.','.','.','2','8','.'},
             {'.','.','.','4','1','9','.','.','5'},
-            {'.','.','.','.','8','.','.','7','9'}};
-        assertThat(ValidSudoku.solution(board)).isTrue();
-    }
-
-    @Test
-    void testSolution1() {
-        char[][] board =
+            {'.','.','.','.','8','.','.','7','9'}}, true
+        ),
+        Arguments.of(new char[][]
             {{'8','3','.','.','7','.','.','.','.'},
             {'6','.','.','1','9','5','.','.','.'},
             {'.','9','8','.','.','.','.','6','.'},
@@ -32,13 +29,9 @@ class ValidSudokuTest {
             {'7','.','.','.','2','.','.','.','6'},
             {'.','6','.','.','.','.','2','8','.'},
             {'.','.','.','4','1','9','.','.','5'},
-            {'.','.','.','.','8','.','.','7','9'}};
-        assertThat(ValidSudoku.solution(board)).isFalse();
-    }
-
-    @Test
-    void testSolution2() {
-        char[][] board =
+            {'.','.','.','.','8','.','.','7','9'}}, false
+        ),
+        Arguments.of(new char[][]
             {{'1','2','.','.','3','.','.','.','.'},
             {'4','.','.','5','.','.','.','.','.'},
             {'.','9','8','.','.','.','.','.','3'},
@@ -47,13 +40,9 @@ class ValidSudokuTest {
             {'7','.','.','.','2','.','.','.','6'},
             {'.','.','.','.','.','.','2','.','.'},
             {'.','.','.','4','1','9','.','.','8'},
-            {'.','.','.','.','8','.','.','7','9'}};
-        assertThat(ValidSudoku.solution(board)).isTrue();
-    }
-
-    @Test
-    void testSolution3() {
-        char[][] board =
+            {'.','.','.','.','8','.','.','7','9'}}, true
+        ),
+        Arguments.of(new char[][]
             {{'1','2','.','.','3','.','.','.','.'},
             {'4','.','.','5','.','.','.','.','.'},
             {'.','9','1','.','.','.','.','.','3'},
@@ -62,8 +51,14 @@ class ValidSudokuTest {
             {'7','.','.','.','2','.','.','.','6'},
             {'.','.','.','.','.','.','2','.','.'},
             {'.','.','.','4','1','9','.','.','8'},
-            {'.','.','.','.','8','.','.','7','9'}};
-        assertThat(ValidSudoku.solution(board)).isFalse();
+            {'.','.','.','.','8','.','.','7','9'}}, false
+        ),
+    };
+
+    @ParameterizedTest
+    @FieldSource
+    void testSolution(char[][] board, boolean expected) {
+        assertThat(ValidSudoku.solution(board)).isEqualTo(expected);
     }
 
 }

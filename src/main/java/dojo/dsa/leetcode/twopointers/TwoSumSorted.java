@@ -8,7 +8,7 @@ public class TwoSumSorted {
 
     private static final int[] EMPTY = new int[] {};
 
-    static int[] solution(int[] nums, int target) {
+    public static int[] solution(int[] nums, int target) {
         int left = 0, right = nums.length - 1;
         int currentSum;
         while (left < right) {

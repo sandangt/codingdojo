@@ -1,29 +1,19 @@
 package dojo.dsa.leetcode.arrayhashing;
 
 import static org.assertj.core.api.Assertions.assertThat;
-import static dojo.dsa.leetcode.arrayhashing.ValidAnagram.solution;
 
-import org.junit.jupiter.api.Test;
+import org.junit.jupiter.params.ParameterizedTest;
+import org.junit.jupiter.params.provider.CsvSource;
 
 
 class ValidAnagramTest {
-    @Test
-    void testSolution0() {
-        assertThat(solution("anagram", "nagaram")).isTrue();
+
+    @ParameterizedTest
+    @CsvSource({
+        "anagram,nagaram,true", "rat,car,false", "racecar,carrace,true", "jar,jam,false"
+    })
+    void testSolution(String s, String t, boolean expected) {
+        assertThat(ValidAnagram.solution(s, t)).isEqualTo(expected);
     }
 
-    @Test
-    void testSolution1() {
-        assertThat(solution("rat", "car")).isFalse();
-    }
-
-    @Test
-    void testSolution2() {
-        assertThat(solution("racecar", "carrace")).isTrue();
-    }
-
-    @Test
-    void testSolution3() {
-        assertThat(solution("jar", "jam")).isFalse();
-    }
 }

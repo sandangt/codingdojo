@@ -6,25 +6,20 @@ package dojo.dsa.leetcode.twopointers;
  */
 public class NextPermutation {
 
-    public static int[] solution(int[] nums) {
+    public static void solution(int[] nums) {
         int numsLen;
-        if ((numsLen = nums.length) <= 1) return nums;
+        if ((numsLen = nums.length) <= 1) return;
         // Find the largest index k such that nums[k] < nums[k + 1].
         // If no such index exists, just reverse nums and done.
-        int k = numsLen - 2;
-        while (k >= 0 && nums[k] >= nums[k+1]) {
-            k--;
-        }
+        int k = numsLen - 2, l;
+        while (k >= 0 && nums[k] >= nums[k+1]) k--;
         if (k >= 0) {
-            // Find the largest index l > k such that nums[k] < nums[l].
-            int l = numsLen - 1;
-            while (nums[k] >= nums[l]) {
-                l--;
-            }
+            // Find the largest index l > k such that nums[l] > nums[k].
+            l = numsLen - 1;
+            while (nums[l] <= nums[k]) l--;
             swap(nums, k, l);
         }
         reverse(nums, k+1);
-        return nums;
     }
 
     private static void reverse(int[] nums, int startIdx) {

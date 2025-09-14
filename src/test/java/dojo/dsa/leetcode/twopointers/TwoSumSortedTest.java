@@ -24,8 +24,8 @@ class TwoSumSortedTest {
     @ParameterizedTest
     @FieldSource
     void testSolution(int[] nums, int target, int[] expected) {
-        int[] actual = TwoSumSorted.solution(nums, target);
-        assertThat(actual).isEqualTo(expected);
+        assertThat(TwoSumSorted.solution(nums, target))
+            .isEqualTo(expected);
     }
 
 }

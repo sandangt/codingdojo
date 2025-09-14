@@ -9,6 +9,7 @@ import java.util.Arrays;
 import static org.assertj.core.api.Assertions.assertThat;
 
 class ThreeSumTest {
+
     private static final Arguments[] testSolution = {
         Arguments.of(new int[] {0, -1, 2, -3, 1}, new int[][] {{-3,1,2},{-1,0,1}}),
         Arguments.of(new int[] {-1,0,1,2,-1,-4}, new int[][] {{-1,-1,2},{-1, 0, 1}}),

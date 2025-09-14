@@ -5,7 +5,8 @@ package dojo.dsa.leetcode.binarysearch;
  * url: https://leetcode.com/problems/search-a-2d-matrix/
  */
 public class Search2DMatrix {
-    static boolean solution(int[][] matrix, int target) {
+
+    public static boolean solution(int[][] matrix, int target) {
         if (matrix.length == 0 || matrix[0].length == 0) return false;
         int rows = matrix.length, columns = matrix[0].length;
         return binarySearch(matrix, target, 0, rows * columns - 1);

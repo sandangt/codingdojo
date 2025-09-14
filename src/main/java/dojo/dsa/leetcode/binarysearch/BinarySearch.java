@@ -6,7 +6,7 @@ package dojo.dsa.leetcode.binarysearch;
  */
 public class BinarySearch {
 
-    static int solution(int[] nums, int target) {
+    public static int solution(int[] nums, int target) {
         return binarySearch(nums, target, 0, nums.length - 1);
     }
 

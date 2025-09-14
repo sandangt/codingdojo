@@ -14,14 +14,14 @@ import java.util.PriorityQueue;
  */
 public class TopKFrequentElements {
 
-    static int[] solution(int[] nums, int k) {
+    public static int[] solution(int[] nums, int k) {
         return solution1(nums, k);
     }
 
     // region Solution 1
-    record Node(int value, int repetition) {}
+    private record Node(int value, int repetition) {}
 
-    static int[] solution1(int[] nums, int k) {
+    private static int[] solution1(int[] nums, int k) {
         PriorityQueue<Node> pq = new PriorityQueue<>((o1, o2) -> Integer.compare(o2.repetition(), o1.repetition()));
         Map<Integer, Integer> counter = new HashMap<>();
         Node node;
@@ -39,7 +39,7 @@ public class TopKFrequentElements {
     // endregion
 
     // region Solution 2
-    static int[] solution2(int[] nums, int k) {
+    private static int[] solution2(int[] nums, int k) {
         Map<Integer, Integer> counter = new HashMap<>();
         List<Integer>[] bucket = new ArrayList[nums.length + 1];
 

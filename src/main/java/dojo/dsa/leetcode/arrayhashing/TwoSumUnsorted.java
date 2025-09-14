@@ -1,9 +1,7 @@
 package dojo.dsa.leetcode.arrayhashing;
 
-
 import java.util.HashMap;
 import java.util.Map;
-
 
 /**
  * easy
@@ -11,7 +9,10 @@ import java.util.Map;
  * url: https://leetcode.com/problems/two-sum/
  */
 public class TwoSumUnsorted {
-    static int[] solution(int[] nums, int target) {
+
+    private static final int[] EMPTY = new int[] {};
+
+    public static int[] solution(int[] nums, int target) {
         Map<Integer, Integer> ht = new HashMap<>();
         int complement;
         for (int i = 0; i < nums.length; i++) {
@@ -20,6 +21,7 @@ public class TwoSumUnsorted {
             }
             ht.put(nums[i], i);
         }
-        return new int[] {};
+        return EMPTY;
     }
+
 }

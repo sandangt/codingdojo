@@ -14,24 +14,23 @@ public class ThreeSum {
 
     private static final int[][] EMPTY = new int[][] {};
 
-    static int[][] solution(int[] nums) {
+    public static int[][] solution(int[] nums) {
         if (nums.length < 3) return EMPTY;
         Arrays.sort(nums);
         List<int[]> collector = new ArrayList<>();
-        int left, right;
+        int left, right, currentSum;
         Set<Integer> leftSet, rightSet;
         for (int i=0; i<nums.length - 2; i++) {
-            if (i != 0 && nums[i-1] == nums[i]) continue;
+            if (i > 0 && nums[i-1] == nums[i]) continue;
             left = i+1;
             right = nums.length - 1;
             leftSet = new HashSet<>();
             rightSet = new HashSet<>();
             while (left < right) {
-                if (nums[left] + nums[right] + nums[i] < 0) {
-                    left++;
-                } else if (nums[left] + nums[right] + nums[i] > 0) {
-                    right--;
-                } else {
+                currentSum = nums[left] + nums[right] + nums[i];
+                if (currentSum < 0) left++;
+                else if (currentSum > 0) right--;
+                else {
                     if (!leftSet.contains(nums[left]) && !rightSet.contains(nums[right])) {
                         collector.add(new int[] {nums[i], nums[left], nums[right]});
                         leftSet.add(nums[left]);
@@ -46,4 +45,5 @@ public class ThreeSum {
         for (int i=0; i< collector.size(); i++) result[i] = collector.get(i);
         return result;
     }
+
 }

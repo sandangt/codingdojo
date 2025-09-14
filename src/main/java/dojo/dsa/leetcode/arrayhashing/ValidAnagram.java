@@ -10,11 +10,11 @@ import java.util.Map;
  */
 public class ValidAnagram {
 
-    static boolean solution(String s, String t) {
-        return solution2(s, t);
+    public static boolean solution(String s, String t) {
+        return solution0(s, t);
     }
 
-    static boolean solution1(String s, String t) {
+    private static boolean solution1(String s, String t) {
         Map<Character, Integer> sCounter = new HashMap<>();
         Map<Character, Integer> tCounter = new HashMap<>();
 
@@ -37,7 +37,7 @@ public class ValidAnagram {
         return true;
     }
 
-    static boolean solution2(String s, String t) {
+    private static boolean solution0(String s, String t) {
         if (s.length() != t.length()) {
             return false;
         }

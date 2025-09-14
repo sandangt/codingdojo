@@ -8,26 +8,24 @@ import java.util.Set;
  * url: https://leetcode.com/problems/longest-consecutive-sequence
  */
 public class LongestConsecutiveSequence {
-    static int solution(int[] nums) {
+
+    public static int solution(int[] nums) {
         if (nums.length == 0) return 0;
-
         Set<Integer> set = new HashSet<>();
-        int longest = 1;
-
-        for (int i : nums) set.add(i);
-
+        int longestCount = 1, currentCount, currentNum;
+        for (int num : nums) set.add(num);
         for (int num : nums) {
-            if (!set.contains(num - 1)) {
-                int count = 1;
-                int curretNum = num;
-                while (set.contains(curretNum+1)) {
-                    count++;
-                    curretNum++;
+            if (!set.contains(num-1)) {
+                currentCount = 1;
+                currentNum = num;
+                while (set.contains(currentNum+1)) {
+                    currentCount++;
+                    currentNum++;
                 }
-                longest = Math.max(longest, count);
+                longestCount = Math.max(longestCount, currentCount);
             }
         }
-        return longest;
+        return longestCount;
     }
 
 }

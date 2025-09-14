@@ -34,8 +34,8 @@ class NextPermutationTest {
     @ParameterizedTest
     @FieldSource
     void testSolution(int[] nums, int[] expected) {
-        assertThat(NextPermutation.solution(nums))
-            .isEqualTo(expected);
+        NextPermutation.solution(nums);
+        assertThat(nums).isEqualTo(expected);
     }
 
 }

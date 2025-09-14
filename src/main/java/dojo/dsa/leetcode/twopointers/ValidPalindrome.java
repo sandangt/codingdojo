@@ -1,26 +1,30 @@
 package dojo.dsa.leetcode.twopointers;
 
+import org.apache.commons.lang3.StringUtils;
+
 /**
  * easy
  * id: ALG-22
  * url: https://leetcode.com/problems/valid-palindrome/
  */
 public class ValidPalindrome {
-    static boolean solution(String s) {
-        if (s.isEmpty()) return true;
-        int start = 0, finish = s.length() - 1;
-        char startLetter, finishLetter;
-        while (start < finish) {
-            if (!Character.isLetterOrDigit(startLetter = s.charAt(start))) ++start;
-            else if (!Character.isLetterOrDigit(finishLetter = s.charAt(finish))) --finish;
+
+    public static boolean solution(String s) {
+        if (StringUtils.isBlank(s)) return true;
+        int left = 0, right = s.length() - 1;
+        char leftLetter, rightLetter;
+        while (left < right) {
+            if (!Character.isLetterOrDigit(leftLetter = s.charAt(left))) ++left;
+            else if (!Character.isLetterOrDigit(rightLetter = s.charAt(right))) --right;
             else {
-                if (Character.toLowerCase(startLetter) != Character.toLowerCase(finishLetter)) {
+                if (Character.toLowerCase(leftLetter) != Character.toLowerCase(rightLetter)) {
                     return false;
                 }
-                ++start;
-                --finish;
+                ++left;
+                --right;
             }
         }
         return true;
     }
+
 }

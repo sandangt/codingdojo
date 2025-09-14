@@ -9,7 +9,7 @@ public class ValidSudoku {
     private static final char SPECIAL_CHAR = '.';
     private static final char STARTER_CHAR = '0';
 
-    static boolean solution(char[][] board) {
+    public static boolean solution(char[][] board) {
         boolean[] rowSet;
         boolean[] colSet;
 
@@ -44,7 +44,7 @@ public class ValidSudoku {
         return true;
     }
 
-    static boolean checkBlock(int rowIdx, int colIdx, char[][] board) {
+    private static boolean checkBlock(int rowIdx, int colIdx, char[][] board) {
         boolean[] blockSet = new boolean[10];
         for (int i=rowIdx; i<rowIdx+3; i++) {
             for (int j=colIdx; j<colIdx+3; j++) {
