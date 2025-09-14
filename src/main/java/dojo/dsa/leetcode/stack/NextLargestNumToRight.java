@@ -9,29 +9,19 @@ import java.util.Stack;
 public class NextLargestNumToRight {
 
     public static int[] solution(int[] nums) {
-        int[] ans = new int[nums.length];
-        Stack<Integer> stack = new Stack<>();
-
+        int[] result = new int[nums.length];
+        Stack<Integer> st = new Stack<>();
         // Iterate from right to left
         for (int i = nums.length - 1; i >= 0; i--) {
             // Pop elements from the stack that are not greater than the current element
-            while (!stack.isEmpty() && nums[stack.peek()] <= nums[i]) {
-                stack.pop();
-            }
-
+            while (!st.isEmpty() && nums[st.peek()] <= nums[i]) st.pop();
             // If the stack is not empty, the top element is the next largest
-            if (!stack.isEmpty()) {
-                ans[i] = nums[stack.peek()];
-            } else {
-                // No greater element to the right
-                ans[i] = -1;
-            }
-
+            if (st.isEmpty()) result[i] = -1; // No greater element to the right
+            else result[i] = nums[st.peek()];
             // Push the current element's index onto the stack
-            stack.push(i);
+            st.push(i);
         }
-
-        return ans;
+        return result;
     }
 
 }

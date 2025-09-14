@@ -6,6 +6,7 @@ import org.junit.jupiter.params.provider.CsvSource;
 import static org.assertj.core.api.Assertions.assertThat;
 
 class LongestRepeatCharReplacementTest {
+
     @ParameterizedTest
     @CsvSource({"ABAB,2,4", "AABABBA,1,4"})
     void testSolution(String s, int k, int expected) {

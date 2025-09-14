@@ -8,7 +8,7 @@ import java.util.Stack;
  */
 public class ReversePolishNotation {
 
-    static int solution(String[] tokens) {
+    public static int solution(String[] tokens) {
         Stack<String> st = new Stack<>();
         String operand1, operand2;
         for (String token : tokens) {

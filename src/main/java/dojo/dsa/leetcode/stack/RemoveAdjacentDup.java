@@ -1,6 +1,7 @@
 package dojo.dsa.leetcode.stack;
 
 import java.util.Stack;
+import java.util.stream.Collectors;
 
 /**
  * easy

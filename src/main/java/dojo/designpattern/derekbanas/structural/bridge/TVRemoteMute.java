@@ -1,0 +1,14 @@
+package dojo.designpattern.derekbanas.structural.bridge;
+
+public class TVRemoteMute extends RemoteButton {
+
+    public TVRemoteMute(EntertainmentDevice newDevice) {
+        super(newDevice);
+    }
+
+    @Override
+    public void buttonNinePressed() {
+        System.out.println("TV was muted");
+    }
+
+}

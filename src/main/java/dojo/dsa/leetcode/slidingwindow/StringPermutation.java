@@ -7,20 +7,19 @@ package dojo.dsa.leetcode.slidingwindow;
 public class StringPermutation {
     private static final char STARTER_CHAR = 'a';
     static boolean solution(String s1, String s2) {
-        if (s1 == null || s2 == null || s1.length() > s2.length()) return false;
-        int[] charMap = new int[26];
-        for (int i=0; i<s1.length(); i++) charMap[s1.charAt(i) - STARTER_CHAR]--;
+        int[] charCounter = new int[26];
+        for (int i=0; i<s1.length(); i++) charCounter[s1.charAt(i) - STARTER_CHAR]--;
         int leftPtr = 0, rightPtr = s1.length() - 1, count;
         while (rightPtr < s2.length()) {
             count = 0;
             for (int i=leftPtr; i<=rightPtr; i++) {
-                if (charMap[s2.charAt(i) - STARTER_CHAR]++ < 0) {
+                if (charCounter[s2.charAt(i) - STARTER_CHAR]++ < 0) {
                     count++;
                 }
             }
             if (count == s1.length()) return true;
             for (int i=leftPtr; i<=rightPtr; i++) {
-                charMap[s2.charAt(i) - STARTER_CHAR]--;
+                charCounter[s2.charAt(i) - STARTER_CHAR]--;
             }
             rightPtr++;
             leftPtr++;

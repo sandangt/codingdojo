@@ -12,7 +12,6 @@ import java.util.Map;
 public class MinWindowSubstr {
 
     public static String solution(String s, String t) {
-        if (StringUtils.isBlank(s) || StringUtils.isBlank(t)) return StringUtils.EMPTY;
         Map<Character, Integer> tCounts = new HashMap<>();
         for (char c : t.toCharArray()) {
             tCounts.put(c, tCounts.getOrDefault(c, 0) + 1);

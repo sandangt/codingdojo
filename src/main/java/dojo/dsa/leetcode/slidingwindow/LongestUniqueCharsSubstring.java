@@ -11,7 +11,7 @@ import java.util.Set;
  */
 public class LongestUniqueCharsSubstring {
 
-    static int solution(String s) {
+    public static int solution(String s) {
         if (s.isEmpty()) return 0;
         if (s.length() == 1) return 1;
         Queue<Character> queue = new ArrayDeque<>();

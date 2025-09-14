@@ -1,40 +1,20 @@
 package dojo.dsa.leetcode.stack;
 
 
-import static dojo.dsa.leetcode.stack.ValidParentheses.solution;
 import static org.assertj.core.api.Assertions.assertThat;
 
-import org.junit.jupiter.api.Test;
+import org.junit.jupiter.params.ParameterizedTest;
+import org.junit.jupiter.params.provider.CsvSource;
 
 
 class ValidParenthesesTest {
-    @Test
-    void testSolution0() {
-        String input = "()";
-        assertThat(solution(input)).isTrue();
+
+    @ParameterizedTest
+    @CsvSource({
+        "(),true", "()[]{},true", "(],false", "[(]),false", "([{}]),true"
+    })
+    void testSolution(String s, boolean expected) {
+        assertThat(ValidParentheses.solution(s)).isEqualTo(expected);
     }
 
-    @Test
-    void testSolution1() {
-        String input = "()[]{}";
-        assertThat(solution(input)).isTrue();
-    }
-
-    @Test
-    void testSolution2() {
-        String input = "(]";
-        assertThat(solution(input)).isFalse();
-    }
-
-    @Test
-    void testSolution3() {
-        String input = "[(])";
-        assertThat(solution(input)).isFalse();
-    }
-
-    @Test
-    void testSolution4() {
-        String input = "([{}])";
-        assertThat(solution(input)).isTrue();
-    }
 }
